@@ -10,7 +10,7 @@ const beginnings = [
     "Find your passion",
     "Create your destiny"
 ];
-  
+
 const middles = [
     "with determination",
     "and perseverance",
@@ -23,7 +23,7 @@ const middles = [
     "with courage",
     "with resilience"
 ];
-  
+
 const endings = [
     "and you will succeed",
     "and greatness will follow",
@@ -37,29 +37,94 @@ const endings = [
     "and the world will be yours"
 ];
 
+const asciiArt = [
+    `_______
+    < Keep    >
+    < It      >
+    < Simple! >
+      -------
+             \\   ^__^
+              \\  (oo)\\_______
+                 (__)\\       )\\/\\
+                     ||----w |
+                     ||     ||
+      `,
+      `
+      _________________
+    < Stay simple,     >
+    < stay focused.    >
+      -----------------
+             \\    ^__^
+              \\   (oo)\\_______
+                 (__)\\       )\\/\\
+                     ||----w |
+                     ||     ||
+      `,
+      `
+      ____________
+    < Simplify!   >
+      ------------
+             \\   ^__^
+              \\  (oo)\\_______
+                 (__)\\       )\\/\\
+                     ||----w |
+                     ||     ||
+    `,
+    `
+      ____________
+    < Keep on rolling!   >
+      ------------
+             \\   ^__^
+              \\  (oo)\\_______
+                 (__)\\       )\\/\\
+                     ||----w |
+                     ||     ||
+    `,
+    `
+      ____________
+    < You can do it!   >
+      ------------
+             \\   ^__^
+              \\  (oo)\\_______
+                 (__)\\       )\\/\\
+                     ||----w |
+                     ||     ||
+    `,
+     `     ___________  
+    '._==_==_=_.' 
+    .-\:      /-. 
+   | (|:.     |) | 
+    '-|:.     |-' 
+      \\::.    /   
+       '::. .'    
+         ) (      
+       _.' '._    
+      `];
+      
+const randomAsciiArt = asciiArt[Math.floor(Math.random() * asciiArt.length)];
+
 function decideOnQuote(phrase) {
     let index = Math.floor(Math.random() * 10);
     return(index);
 }
 
 
-// function generateQuote(begin, mid, end) {
-
-// }
 function buildMessage() {
-    let begin, mid, end;
-    let mesageString;
-    begin = decideOnQuote(beginnings);
-    mid = decideOnQuote(middles);
-    end = decideOnQuote(endings);
-    mesageString = `${beginnings[begin]} ${middles[mid]} ${endings[end]}!`;
-    return mesageString;
+        let begin, mid, end;
+        let mesageString;
+        begin = decideOnQuote(beginnings);
+        mid = decideOnQuote(middles);
+        end = decideOnQuote(endings);
+        mesageString = `${beginnings[begin]} ${middles[mid]} ${endings[end]}!`;
+        return mesageString;
 }
 
 function outputMesage() {
     let motivation = buildMessage();
     console.log('You motivational message for today is:\n');
     console.log(motivation);
+    console.log('You also deserve a nice ASCII art!');
+    console.log(randomAsciiArt);
 }
 
 outputMesage();
